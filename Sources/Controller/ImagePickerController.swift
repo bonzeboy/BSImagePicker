@@ -70,6 +70,13 @@ open class ImagePickerController: UINavigationController {
     public init() {
         assetsViewController = AssetsViewController(store: assetStore)
         super.init(nibName: nil, bundle: nil)
+        
+        print("1")
+        print(Bundle(identifier: "com.apple.UIKit"))
+        print("2")
+        print(Bundle(identifier: "com.apple.UIKit")?.localizedString(forKey: "Done", value: "Done", table: ""))
+        print("3")
+        print(Bundle(identifier: "com.apple.UIKit")?.localizedString(forKey: "Done", value: "Done", table: "") ?? "Done")
     }
 
     public required init?(coder aDecoder: NSCoder) {
